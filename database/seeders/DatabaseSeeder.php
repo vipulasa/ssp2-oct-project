@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // create 10 hospitals
+        \App\Models\Hospital::factory(10)->create();
     }
 }
