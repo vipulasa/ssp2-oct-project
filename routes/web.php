@@ -14,14 +14,45 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Auth::routes();
 
 Route::get('/dev', function () {
     dd(\App\Models\Hospital::all());
 });
 
-Auth::routes();
+Route::middleware(['auth'])
+    ->prefix('admin')
+    ->group(function(){
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        /*
+         * Users
+         *
+         * Manage users and their profiles
+         */
+        Route::resource('/users', \App\Http\Controllers\UserController::class);
+
+        /*
+         * Hospitals
+         *
+         * Manage hospitals and their profiles
+         */
+        Route::resource('/hospitals', \App\Http\Controllers\HospitalController::class);
+
+        /*
+         * Appointments
+         *
+         * Manage appointments and their profiles
+         */
+        Route::resource('/appointments', \App\Http\Controllers\AppointmentController::class);
+
+
+});
+
+
+
+
+Route::get('/', function () {
+    return view('home');
+});
+
+
