@@ -10,7 +10,7 @@ class SpecializationController extends Controller
     public function index()
     {
         return view('admin.specialisation.index', [
-            'specializations' => Specialisation::all()
+            'specialisations' => Specialisation::paginate(10)
         ]);
     }
 

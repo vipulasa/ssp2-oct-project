@@ -37,6 +37,34 @@
 
                 </ul>
 
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Administration
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item"
+                               href="{{ route('users.index') }}">
+                                Users
+                            </a>
+                            <a class="dropdown-item"
+                               href="{{ route('hospitals.index') }}">
+                                Hospitals
+                            </a>
+                            <a class="dropdown-item"
+                               href="{{ route('appointments.index') }}">
+                                Appointments
+                            </a>
+                            <a class="dropdown-item"
+                               href="{{ route('specialisations.index') }}">
+                                Specialisations
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
                     <!-- Authentication Links -->
@@ -58,6 +86,7 @@
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
+
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
