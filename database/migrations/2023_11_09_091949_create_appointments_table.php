@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('hospital_id');
             $table->unsignedBigInteger('doctor_id')->nullable();
             $table->unsignedBigInteger('customer_id');
-            $table->unsignedBigInteger('specialisation_id');
+            $table->unsignedBigInteger('specialisation_id')->nullable();
             $table->float('appointment_fee');
             $table->tinyInteger('status');
             $table->softDeletes();

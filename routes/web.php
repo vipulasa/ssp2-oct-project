@@ -45,8 +45,17 @@ Route::middleware(['auth'])
          */
         Route::resource('/appointments', \App\Http\Controllers\AppointmentController::class);
 
+        /*
+         * Specializations
+         *
+         * Manage specializations and their profiles
+         */
+        Route::resource('/specialisations', \App\Http\Controllers\SpecializationController::class);
+
 
 });
+
+
 
 
 
