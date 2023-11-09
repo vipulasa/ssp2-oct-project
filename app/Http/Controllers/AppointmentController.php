@@ -10,9 +10,7 @@ class AppointmentController extends Controller
 {
     public function index()
     {
-        $this->authorize('viewAny', Appointment::class);
-
-        return AppointmentResource::collection(Appointment::all());
+        return view('admin.appointment.index');
     }
 
     public function store(AppointmentRequest $request)
@@ -24,9 +22,17 @@ class AppointmentController extends Controller
 
     public function show(Appointment $appointment)
     {
-        $this->authorize('view', $appointment);
+        return view('admin.appointment.show');
+    }
 
-        return new AppointmentResource($appointment);
+    public function create()
+    {
+        return view('admin.appointment.form');
+    }
+
+    public function edit(Appointment $appointment)
+    {
+        return view('admin.appointment.form');
     }
 
     public function update(AppointmentRequest $request, Appointment $appointment)

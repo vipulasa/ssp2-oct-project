@@ -10,9 +10,7 @@ class HospitalController extends Controller
 {
     public function index()
     {
-        $this->authorize('viewAny', Hospital::class);
-
-        return HospitalResource::collection(Hospital::all());
+        return view('admin.hospital.index');
     }
 
     public function store(HospitalRequest $request)
@@ -24,18 +22,22 @@ class HospitalController extends Controller
 
     public function show(Hospital $hospital)
     {
-        $this->authorize('view', $hospital);
+       return view('admin.hospital.show');
+    }
 
-        return new HospitalResource($hospital);
+    public function create()
+    {
+        return view('admin.hospital.form');
+    }
+
+    public function edit(Hospital $hospital)
+    {
+        return view('admin.hospital.form');
     }
 
     public function update(HospitalRequest $request, Hospital $hospital)
     {
-        $this->authorize('update', $hospital);
 
-        $hospital->update($request->validated());
-
-        return new HospitalResource($hospital);
     }
 
     public function destroy(Hospital $hospital)
