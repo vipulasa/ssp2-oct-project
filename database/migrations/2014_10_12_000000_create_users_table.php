@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,12 +12,41 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+
+            $table->tinyInteger('role_id')->default(3);
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+
+            // Profile
+            $table->string('designation')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('date_of_birth')->nullable();
+
+            // address
+            $table->integer('phone')->nullable();
+            $table->integer('mobile')->nullable();
+            $table->text('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('province')->nullable();
+            $table->string('postal_code')->nullable();
+
+            // doctor
+            $table->string('specialisation')->nullable();
+            $table->string('license_number')->nullable();
+            $table->json('qualifications')->nullable();
+
+
+            $table->boolean('is_active')->nullable();
+
+
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
