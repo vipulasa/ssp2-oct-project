@@ -26,6 +26,27 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+
+            // Profile
+            'designation'=> 'Dr',
+            'first_name' => fake()->firstName(),
+            'last_name'=> fake()->lastName(),
+            'gender' => fake()->randomElement([
+                'male', 'female'
+            ]),
+            'date_of_birth' => fake()->date(),
+
+            // address
+            'phone' => fake()->phoneNumber(),
+            'mobile' => fake()->phoneNumber(),
+            'address' => fake()->address(),
+            'city' => fake()->city(),
+            'province' => fake()->state(),
+            'postal_code' => fake()->postcode(),
+
+            // doctor
+
+            'license_number' => fake()->numberBetween(100000, 999999),
         ];
     }
 

@@ -36,12 +36,16 @@ return new class extends Migration {
             $table->string('postal_code')->nullable();
 
             // doctor
-            $table->string('specialisation')->nullable();
+            $table->foreignId('specialisation_id')
+                ->nullable()
+                ->constrained('specialisations');
+
+
             $table->string('license_number')->nullable();
             $table->json('qualifications')->nullable();
 
 
-            $table->boolean('is_active')->nullable();
+            $table->boolean('is_active')->default(1);
 
 
             $table->rememberToken();
