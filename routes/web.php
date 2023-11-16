@@ -60,8 +60,6 @@ Route::middleware(['auth'])
 
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 
 

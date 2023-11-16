@@ -8,7 +8,11 @@
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
                     <div class="card-body">
+                        @foreach($doctors as $doctor)
+                            <x-doctor :doctor="$doctor"/>
+                        @endforeach
 
+                        <x-button text="Add Doctor" />
                     </div>
                 </div>
             </div>

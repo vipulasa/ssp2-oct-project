@@ -41,7 +41,7 @@ class User extends Authenticatable
         'postal_code',
 
         // doctor
-        'specialisation',
+        'specialisation_id',
         'license_number',
         'qualifications',
 
@@ -70,4 +70,9 @@ class User extends Authenticatable
         'qualifications' => 'array',
         'role_id' => UserRole::class
     ];
+
+    public function specialisation()
+    {
+        return $this->belongsTo(Specialisation::class);
+    }
 }
