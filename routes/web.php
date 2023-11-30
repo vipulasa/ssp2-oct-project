@@ -17,7 +17,34 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/dev', function () {
-    dd(\App\Models\Hospital::all());
+
+    echo date('H:i:s') . '<br>';
+
+    // set the memory limit to 0
+    ini_set('memory_limit', '-1');
+
+    // set the maximum execution time to 0
+    set_time_limit(0);
+
+    foreach(range(0, 10) as $i){
+
+        // dispatch the job
+//        \App\Jobs\CreateUser::dispatch($i);
+
+//        \App\Jobs\SendWelcomeMailJob::dispatch($i);
+
+        // create the user
+//        (new User())->create([
+//            'name' => 'User ' . $i,
+//            'email' => 'user' . $i . '@gmail.com',
+//            'password' => bcrypt('password'),
+//            'email_verified_at' => now(),
+//            'remember_token' => Str::random(10),
+//        ]);
+    }
+
+    echo date('H:i:s') . '<br>';
+
 });
 
 Route::middleware(['auth'])
@@ -57,9 +84,4 @@ Route::middleware(['auth'])
 
 
 
-
-
-
 Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
-
-
