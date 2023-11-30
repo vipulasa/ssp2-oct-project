@@ -9,8 +9,15 @@ class SpecializationController extends Controller
 {
     public function index()
     {
+        app()
+            ->make('HospitalSystem')
+            ->setTitle('This is the page title');
+
+        $name = 'This is the active page name';
+
         return view('admin.specialisation.index', [
-            'specialisations' => Specialisation::paginate(10)
+            'specialisations' => Specialisation::paginate(10),
+            'active_page' => $name
         ]);
     }
 

@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container">
+
+        <h1>{{ app()->make('HospitalSystem')->getTitle() }}</h1>
+
         <div class="row justify-content-center bg-white p-2">
             <div class="col-md-12">
                 <div class="d-flex justify-content-between mb-4 mt-4">

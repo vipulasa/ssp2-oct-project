@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+$hospitalSystem = app()->make('HospitalSystem');
+
+$hospitalSystem->setTitle('HOSPITAL-001');
+
 Route::get('/dev', function () {
 
     echo date('H:i:s') . '<br>';

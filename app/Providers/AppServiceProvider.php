@@ -13,6 +13,9 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+        $this->app->singleton('HospitalSystem', function () {
+            return new \App\HospitalSystem();
+        });
     }
 
     /**

@@ -1,6 +1,7 @@
 @props(['doctor'])
 
 <div class="card card-2 p-4">
+    <h1>{{ app()->make('HospitalSystem')->getTitle() }}</h1>
     <div class=" image d-flex flex-column justify-content-center align-items-center">
         <button class="btn btn-secondary">
             <img src="https://ui-avatars.com/api/?name={{ $doctor->first_name }}+{{ $doctor->last_name }}" height="100"
