@@ -22,5 +22,6 @@ class Hospital extends Model
 
     protected $casts = [
         'uuid' => 'string',
+        'status' => 'integer'
     ];
 }

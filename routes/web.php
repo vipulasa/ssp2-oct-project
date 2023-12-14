@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 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
+
 Auth::routes();
 
 $hospitalSystem = app()->make('HospitalSystem');
