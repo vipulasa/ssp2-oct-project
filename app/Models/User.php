@@ -45,6 +45,10 @@ class User extends Authenticatable
         'license_number',
         'qualifications',
 
+        'hospital_id',
+
+        'consultation_fee',
+
 
         'is_active',
     ];
@@ -74,5 +78,10 @@ class User extends Authenticatable
     public function specialisation()
     {
         return $this->belongsTo(Specialisation::class);
+    }
+
+    public function hospital()
+    {
+        return $this->belongsTo(Hospital::class);
     }
 }

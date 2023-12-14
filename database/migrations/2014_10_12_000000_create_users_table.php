@@ -44,6 +44,11 @@ return new class extends Migration {
             $table->string('license_number')->nullable();
             $table->json('qualifications')->nullable();
 
+            $table->foreignId('hospital_id')
+                ->nullable()
+                ->constrained('hospitals');
+
+            $table->float('consultation_fee')->nullable();
 
             $table->boolean('is_active')->default(1);
 

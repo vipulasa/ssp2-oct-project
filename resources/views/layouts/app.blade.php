@@ -107,9 +107,6 @@
             </div>
         </div>
     </nav>
-
-    <h1>{{ app()->make('HospitalSystem')->getTitle() }}</h1>
-
     <main class="py-4">
         @yield('content')
     </main>

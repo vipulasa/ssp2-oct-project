@@ -53,6 +53,12 @@ Route::get('/dev', function () {
 
 });
 
+Route::get('cart/{cart}', [
+    \App\Http\Controllers\CartController::class,
+    'index'
+])->name('cart.index');
+
+
 Route::middleware(['auth'])
     ->prefix('admin')
     ->group(function(){

@@ -44,6 +44,7 @@ class UserFactory extends Factory
             'province' => fake()->state(),
             'postal_code' => fake()->postcode(),
 
+            'consultation_fee' => fake()->numberBetween(100, 1000),
             // doctor
 
             'license_number' => fake()->numberBetween(100000, 999999),

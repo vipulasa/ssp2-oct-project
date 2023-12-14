@@ -1,7 +1,6 @@
 @props(['doctor'])
 
-<div class="card card-2 p-4">
-    <h1>{{ app()->make('HospitalSystem')->getTitle() }}</h1>
+<div class="card card-2 p-4 pt-4">
     <div class=" image d-flex flex-column justify-content-center align-items-center">
         <button class="btn btn-secondary">
             <img src="https://ui-avatars.com/api/?name={{ $doctor->first_name }}+{{ $doctor->last_name }}" height="100"
@@ -17,5 +16,6 @@
                 {{ $doctor->specialisation->title }}
             </span>
         </div>
+        @livewire('consult-now-btn', ['doctor' => $doctor], key($doctor->id))
     </div>
 </div>
