@@ -49,4 +49,5 @@
             </div>
         </div>
     </div>
+    <x-analytics type="page_hit"/>
 @endsection

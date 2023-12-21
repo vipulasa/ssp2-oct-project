@@ -7,6 +7,8 @@
                 <div class="card">
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
+                    <x-analytics type="page_hit"/>
+
                     <div class="card-body row">
                         @foreach($doctors as $doctor)
                             <div class="col-md-4 mb-3">
