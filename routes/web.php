@@ -146,4 +146,10 @@ Route::middleware(['auth'])
     });
 
 
+Route::get('/js-home', function(){
+
+        return view('js_home');
+
+    })->name('js-home');
+
 Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');

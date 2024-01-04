@@ -1,5 +1,7 @@
 <?php
 
+use App\Enum\UserRole;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +29,15 @@ Route::get('/hospitals', function (Request $request) {
         'hospitals' => \App\Models\Hospital::all(),
     ]);
 });
+
+Route::get('doctors', function (Request $request) {
+
+    $doctors = (new User())
+        ->where('role_id', UserRole::Doctor)
+        ->get();
+
+    return response()->json([
+        'doctors' => $doctors
+    ]);
+});
+

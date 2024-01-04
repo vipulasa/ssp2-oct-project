@@ -26,9 +26,9 @@
                     <button type="submit">Create Token</button>
                 </form>
 
-                <div class="card">
+                <div class="card bg-white">
 
-                    <table>
+                    <table class="table table-hover">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -42,11 +42,11 @@
                                 <td>{{ $token->id }}</td>
                                 <td>{{ $token->name }}</td>
                                 <td>
-                                    <a href="{{ route('api-token.show', $token->id) }}">Show</a>
+                                    <a class="btn btn-primary" href="{{ route('api-token.show', $token->id) }}">Show</a>
                                     <form action="{{ route('api-token.destroy', $token->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit">Delete</button>
+                                        <button type="submit" class="btn btn-danger" >Delete</button>
                                     </form>
                             </tr>
                         @endforeach
