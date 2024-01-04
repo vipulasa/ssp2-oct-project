@@ -63,6 +63,10 @@
                                href="{{ route('specialisations.index') }}">
                                 Specialisations
                             </a>
+                            <a class="dropdown-item"
+                               href="{{ route('api-token.index') }}">
+                                API Tokens
+                            </a>
                         </div>
                     </li>
                 </ul>

@@ -53,6 +53,13 @@ Route::get('/analytic-hit', function (Request $request) {
 
 Route::get('/dev', function () {
 
+//    $user = auth()->user();
+//
+//    dd($user->createToken('api_token'));
+////    dd($user->createToken('test'));
+
+
+
 //    $user_id = auth()->id();
 //
 //    $session_id = request()->session()->getId();
@@ -104,6 +111,8 @@ Route::get('analytics', [
 Route::middleware(['auth'])
     ->prefix('admin')
     ->group(function () {
+
+        Route::resource('/api-token', \App\Http\Controllers\ApiTokenController::class);
 
         /*
          * Users

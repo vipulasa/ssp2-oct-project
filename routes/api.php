@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')
+    ->get('/user', function (Request $request) {
+
+        $user = auth()->user();
+
+    return $user->email;
+});
+
+Route::get('/hospitals', function (Request $request) {
+    return response()->json([
+        'hospitals' => \App\Models\Hospital::all(),
+    ]);
 });
